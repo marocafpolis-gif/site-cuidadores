@@ -181,7 +181,7 @@ h3 { font-size: 22px; line-height: 1.25; }
 
 /* Cabeçalho */
 .cabecalho {
-  position: sticky; top: 0; z-index: 50;
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
   background: rgba(255, 255, 255, .88);
   -webkit-backdrop-filter: saturate(170%) blur(14px); backdrop-filter: saturate(170%) blur(14px);
   border-bottom: 1px solid transparent;
@@ -402,11 +402,6 @@ body.menu-aberto { overflow: hidden; }
   .citacao blockquote { font-size: 25px; }
 }
 
-/* Imagens que se revelam */
-.js .revela { clip-path: inset(0 0 100% 0 round var(--raio-cartao)); transition: clip-path 1.2s var(--suave); }
-.js .revela img { transform: scale(1.15); transition: transform 1.6s var(--suave); }
-.js .revela.visivel { clip-path: inset(0 0 0 0 round var(--raio-cartao)); }
-.js .revela.visivel img { transform: scale(1); }
 
 /* Serviços */
 .servicos { background: var(--areia); overflow: hidden; }
@@ -482,8 +477,7 @@ body.menu-aberto { overflow: hidden; }
 .etapas li { position: relative; padding-top: 26px; }
 .etapas li::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--linha); }
 .etapas li::after { content: ""; position: absolute; left: 0; top: -5px; width: 11px; height: 11px; border-radius: 50%; background: var(--verde); box-shadow: 0 0 0 5px var(--fundo); }
-.js .etapas li::before { transform: scaleX(0); transform-origin: 0 50%; transition: transform 1.1s var(--suave) calc(var(--d, 0s) + .15s); }
-.js .etapas li.visivel::before { transform: scaleX(1); }
+.etapas li::before { transform-origin: 0 50%; }
 .etapas .numero { display: block; font: italic 500 44px/1 var(--f-titulo); color: var(--verde); margin-bottom: 18px; }
 .etapas h3 { margin-bottom: 10px; }
 .etapas p { color: var(--texto-suave); }
@@ -676,12 +670,17 @@ body.menu-aberto { overflow: hidden; }
 .wa-flutuante svg { width: 30px; height: 30px; }
 @media (min-width: 1024px) { .wa-flutuante { right: 28px; bottom: 28px; } }
 
-/* Animação das seções */
-.js .reveal { opacity: 0; transform: translateY(20px); transition: opacity .8s var(--suave) var(--d, 0s), transform .8s var(--suave) var(--d, 0s); }
-.js .reveal.visivel { opacity: 1; transform: none; }
+/* Animação das seções: o conteúdo fica sempre visível; a animação só roda quando a seção chega na tela */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal.anima { animation: sobe .8s var(--suave) var(--d, 0s) both; }
+  .revela.anima { animation: cortina 1.2s var(--suave) both; }
+  .revela.anima img { animation: aproxima 1.6s var(--suave) both; }
+  .etapas li.anima::before { animation: linha 1.1s var(--suave) calc(var(--d, 0s) + .15s) both; }
+}
+@keyframes cortina { from { clip-path: inset(0 0 100% 0 round var(--raio-cartao)); } to { clip-path: inset(0 0 0 0 round var(--raio-cartao)); } }
+@keyframes aproxima { from { transform: scale(1.15); } to { transform: none; } }
+@keyframes linha { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 @media (prefers-reduced-motion: reduce) {
-  .js .reveal, .js .revela, .js .revela img { opacity: 1; transform: none; clip-path: none; transition: none; }
-  .js .etapas li::before { transform: none; }
   .js .sublinhado path { stroke-dashoffset: 0; animation: none; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
@@ -1173,20 +1172,21 @@ const CONFIG = {
     requestAnimationFrame(passo);
   };
 
-  // Animação das seções
+  // Animação das seções (quem já está na tela ao abrir não anima)
   const revelar = document.querySelectorAll(".reveal, .revela");
-  if ("IntersectionObserver" in window) {
+  if ("IntersectionObserver" in window && !menosMovimento) {
     const obs = new IntersectionObserver((entradas) => {
       entradas.forEach((en) => {
         if (!en.isIntersecting) return;
-        en.target.classList.add("visivel");
+        en.target.classList.add("anima");
         en.target.querySelectorAll("[data-conta]").forEach(contar);
         obs.unobserve(en.target);
       });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
-    revelar.forEach((el) => obs.observe(el));
-  } else {
-    revelar.forEach((el) => el.classList.add("visivel"));
+    }, { rootMargin: "0px 0px 10% 0px" });
+    revelar.forEach((el) => {
+      if (el.getBoundingClientRect().top < window.innerHeight) return;
+      obs.observe(el);
+    });
   }
 
   // Carrossel de depoimentos (as setas só aparecem com 2 ou mais)
@@ -1242,9 +1242,17 @@ const CONFIG = {
       "Autorizo a publicação do meu depoimento no site.";
 
     if (temNumero) {
-      window.open(linkWhatsapp(mensagem), "_blank", "noopener");
+      const url = linkWhatsapp(mensagem);
+      const abrir = document.createElement("a");
+      abrir.href = url; abrir.target = "_blank"; abrir.rel = "noopener";
+      document.body.appendChild(abrir); abrir.click(); abrir.remove();
       status.classList.remove("aviso");
-      status.textContent = "Obrigada! Seu depoimento será publicado após a aprovação.";
+      status.textContent = "Obrigada! Seu depoimento será publicado após a aprovação. ";
+      const reserva = document.createElement("a");
+      reserva.href = url; reserva.target = "_blank"; reserva.rel = "noopener";
+      reserva.textContent = "Se o WhatsApp não abriu, toque aqui.";
+      reserva.style.color = "inherit";
+      status.appendChild(reserva);
       form.reset();
     } else {
       status.classList.add("aviso");
