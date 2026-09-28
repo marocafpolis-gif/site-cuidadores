@@ -1,0 +1,298 @@
+{
+  "projeto": {
+    "nome": "Site Agência de Cuidadores Gonçalves",
+    "versao": "2.0",
+    "data": "2026-09-28",
+    "objetivo": "Apresentar os serviços com clareza, transmitir confiança de família e levar a família a conversar no WhatsApp.",
+    "acao_principal": "Conversar no WhatsApp",
+    "publico": "Filhos e netos (35 a 65 anos) que buscam cuidador para pais ou avós na Grande Florianópolis",
+    "tom_de_voz": ["acolhedor", "seguro", "elegante", "claro", "próximo, como família"],
+    "idioma": "pt-BR"
+  },
+
+  "instrucoes_para_o_claude_code": {
+    "entrega": "Um único arquivo index.html com CSS e JS embutidos, mais a pasta img/ com as imagens. Sem frameworks, sem bibliotecas externas além do Google Fonts.",
+    "responsivo": "Mobile-first. Layout de computador a partir de 1024px, de tablet entre 640 e 1023px e de celular abaixo de 640px. Nunca rolar para os lados. Margem lateral mínima de 20px no celular e 120px no computador (largura máxima do conteúdo de 1200px).",
+    "fidelidade": "Seguir exatamente as cores, fontes, textos e a ordem das seções deste arquivo. Não inventar números, depoimentos, preços ou dados da empresa.",
+    "placeholders": "Tudo que está entre colchetes, como [número], deve ficar visível e fácil de trocar. Centralizar esses dados no objeto CONFIG do JavaScript (seção 'config' abaixo).",
+    "whatsapp": "Todos os botões de WhatsApp abrem https://wa.me/{CONFIG.whatsapp}?text={mensagem codificada}. Se CONFIG.whatsapp estiver vazio, rolar até a seção #contato.",
+    "botao_flutuante": "Botão redondo verde de WhatsApp fixo no canto inferior direito (60px), com respeito à área segura do celular.",
+    "menu_celular": "No celular, o menu vira um botão de três linhas que abre um painel com os links e o botão de WhatsApp.",
+    "cabecalho_fixo": "O cabeçalho fica fixo no topo ao rolar, com fundo branco levemente translúcido.",
+    "animacoes": "Suaves e discretas: as seções surgem com leve subida (fade + 20px) ao entrar na tela, com IntersectionObserver. O conteúdo deve ficar visível mesmo sem JavaScript. Respeitar prefers-reduced-motion.",
+    "faq": "Usar <details> e <summary> (acordeão). A primeira pergunta abre aberta.",
+    "form_depoimento": "Formulário visual (nome, cidade, texto, autorização). Ao enviar, montar uma mensagem de WhatsApp para a Ana com o depoimento, já que o site é HTML estático. Na versão WordPress, trocar pelo plugin Strong Testimonials com aprovação.",
+    "acessibilidade": "Contraste mínimo 4.5:1, textos alternativos em todas as imagens, foco visível nos links e botões, botões com no mínimo 48px de altura, tags semânticas (header, nav, main, section, footer).",
+    "seo": "Incluir title, meta description, Open Graph e dados estruturados JSON-LD do tipo HomeHealthCareService / LocalBusiness com as cidades atendidas. Um único h1.",
+    "imagens": "Usar loading='lazy' em todas, exceto a do topo. object-fit: cover com o object-position indicado em cada imagem."
+  },
+
+  "config": {
+    "whatsapp": "",
+    "whatsapp_exibicao": "[número da empresa]",
+    "email": "[e-mail]",
+    "instagram": "[@perfil]",
+    "cnpj": "[a informar]",
+    "mensagem_whatsapp_padrao": "Olá! Vim pelo site e gostaria de conversar sobre cuidado para o meu familiar."
+  },
+
+  "identidade_visual": {
+    "cores": {
+      "azul_marinho": { "hex": "#173F7A", "uso": "Títulos, barra superior, faixa final e cartão de destaque" },
+      "azul_logo": { "hex": "#1D4E9E", "uso": "Nome no logo e links" },
+      "azul_rodape": { "hex": "#102C57", "uso": "Fundo do rodapé" },
+      "verde": { "hex": "#2E7A32", "uso": "Somente botões de WhatsApp, etiquetas das seções e destaques em itálico" },
+      "verde_folha": { "hex": "#6DB24A", "uso": "Aspas decorativas dos depoimentos" },
+      "verde_claro": { "hex": "#E6F1E2", "uso": "Fundo de ícones e bloco atrás da foto da seção Quem somos" },
+      "fundo": { "hex": "#FBF9F5", "uso": "Fundo geral da página" },
+      "areia": { "hex": "#F2ECE3", "uso": "Fundo da seção de serviços" },
+      "azul_claro": { "hex": "#EAF1F8", "uso": "Fundo da seção de depoimentos" },
+      "texto": { "hex": "#1B2A3A", "uso": "Texto principal" },
+      "texto_suave": { "hex": "#4A5764", "uso": "Parágrafos" },
+      "texto_legenda": { "hex": "#56616D", "uso": "Legendas e textos pequenos" },
+      "texto_sobre_azul": { "hex": "#D6E3F5", "uso": "Parágrafos sobre fundo azul-marinho" },
+      "linha": { "hex": "#DCD4C7", "uso": "Divisórias" },
+      "branco": { "hex": "#FFFFFF", "uso": "Cartões e cabeçalho" }
+    },
+    "fontes": {
+      "google_fonts_url": "https://fonts.googleapis.com/css2?family=Courgette&family=Lora:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap",
+      "titulos": { "familia": "Lora", "peso": 500, "fallback": "Georgia, serif", "observacao": "Destaques em itálico na cor verde" },
+      "textos": { "familia": "Nunito Sans", "pesos": [400, 600, 700, 800], "fallback": "'Segoe UI', system-ui, sans-serif" },
+      "assinatura_logo": { "familia": "Courgette", "uso": "Somente a palavra 'Gonçalves' no cabeçalho e no rodapé" }
+    },
+    "escala_tipografica": {
+      "h1": { "computador": "58px", "celular": "35px", "altura_linha": 1.12 },
+      "h2": { "computador": "44 a 50px", "celular": "29 a 30px", "altura_linha": 1.15 },
+      "h3": { "computador": "26 a 27px", "celular": "22 a 23px" },
+      "paragrafo": { "computador": "17 a 19px", "celular": "16 a 17px", "altura_linha": 1.7 },
+      "etiqueta": { "tamanho": "14px (celular 12px)", "peso": 800, "espacamento_letras": "0.16em", "maiusculas": true, "cor": "#2E7A32" }
+    },
+    "formas": {
+      "cartoes": "border-radius 24px (celular 20px)",
+      "botoes": "border-radius 999px (formato pílula), altura mínima 52px",
+      "foto_topo": "Formato de arco: border-radius 240px 240px 28px 28px",
+      "sombra": "0 30px 60px -40px rgba(23, 63, 122, 0.40)"
+    },
+    "espacamento": {
+      "entre_secoes_computador": "112 a 120px",
+      "entre_secoes_celular": "56 a 64px"
+    }
+  },
+
+  "imagens": {
+    "pasta": "img/",
+    "observacao": "Fotos de banco de imagem enviadas pela Mari. Confirmar a licença de uso e, quando possível, substituir por fotos reais da Ana Paula e da equipe.",
+    "arquivos": {
+      "logo": { "arquivo": "logo.jpg", "descricao": "Logo completo com fundo branco" },
+      "logo_icone": { "arquivo": "logo-icone.jpg", "descricao": "Somente o desenho da casa com o coração, para o cabeçalho" },
+      "cabelo": { "arquivo": "cabelo.jpg", "alt": "Cuidadora penteando o cabelo de uma senhora sorridente", "object_position": "center 30%" },
+      "cadeira": { "arquivo": "cadeira.jpg", "alt": "Cuidadora com a mão no ombro de uma senhora em cadeira de rodas", "object_position": "center 25%" },
+      "andador_homem": { "arquivo": "andador-homem.jpg", "alt": "Cuidadora apoiando um senhor com andador em casa", "object_position": "center 22%" },
+      "andador_mulher": { "arquivo": "andador-mulher.jpg", "alt": "Cuidadora ajudando uma senhora a caminhar com andador", "object_position": "center 35%" },
+      "pressao": { "arquivo": "pressao.jpg", "alt": "Cuidadora aferindo a pressão de um senhor", "object_position": "center 40%", "atencao": "Resolução baixa (351x626). Usar no máximo a 400px de largura ou trocar por uma foto maior." }
+    }
+  },
+
+  "seo": {
+    "title": "Agência de Cuidadores Gonçalves | Cuidador de idosos em Florianópolis, São José, Palhoça e Biguaçu",
+    "meta_description": "Cuidadores de idosos selecionados por uma técnica de enfermagem com mais de 10 anos de experiência. Atendimento 24 horas, em casa e no hospital, na Grande Florianópolis.",
+    "palavras_chave": ["cuidador de idosos Florianópolis", "cuidador de idosos São José", "cuidador de idosos Palhoça", "cuidador de idosos Biguaçu", "acompanhante hospitalar idoso", "cuidador pós-operatório", "cuidador para Alzheimer", "cuidador 24 horas"],
+    "json_ld": {
+      "@type": "HomeHealthCareService",
+      "name": "Agência de Cuidadores Gonçalves",
+      "areaServed": ["Florianópolis", "São José", "Palhoça", "Biguaçu"],
+      "openingHours": "Mo-Su 00:00-23:59",
+      "telephone": "{CONFIG.whatsapp}"
+    }
+  },
+
+  "secoes": [
+    {
+      "id": "barra-superior",
+      "tipo": "barra",
+      "fundo": "#173F7A",
+      "cor_texto": "#E6EEF8",
+      "esconder_no_celular": true,
+      "conteudo": {
+        "esquerda": "Florianópolis · São José · Palhoça · Biguaçu",
+        "direita": ["Atendimento 24 horas, todos os dias", "WhatsApp {CONFIG.whatsapp_exibicao}"]
+      }
+    },
+    {
+      "id": "cabecalho",
+      "tipo": "header",
+      "fundo": "#FFFFFF",
+      "logo": { "imagem": "logo_icone", "linha_1": "Agência de Cuidadores", "linha_2": "Gonçalves", "linha_2_fonte": "Courgette" },
+      "menu": [
+        { "texto": "Início", "link": "#inicio" },
+        { "texto": "Quem somos", "link": "#sobre" },
+        { "texto": "Serviços", "link": "#servicos" },
+        { "texto": "Depoimentos", "link": "#depoimentos" },
+        { "texto": "Contato", "link": "#contato" }
+      ],
+      "botao": { "texto": "Fale no WhatsApp", "acao": "whatsapp", "cor": "#2E7A32" }
+    },
+    {
+      "id": "inicio",
+      "tipo": "hero",
+      "layout_computador": "Duas colunas: texto à esquerda e composição de fotos à direita",
+      "layout_celular": "Texto, botão e depois a foto em arco com o selo sobreposto",
+      "fundo": "Degradê de #FFFFFF para #FBF9F5",
+      "etiqueta": "Cuidadores de idosos na Grande Florianópolis",
+      "titulo_h1": "Cuidar de quem dedicou a vida com amor é preservar histórias e garantir dignidade.",
+      "titulo_destaque": { "trecho": "preservar histórias", "estilo": "itálico, verde #2E7A32" },
+      "subtitulo": "Cuidadores selecionados por uma técnica de enfermagem com mais de 10 anos de experiência com idosos. Em casa ou no hospital, de dia ou de noite.",
+      "botoes": [
+        { "texto": "Conversar no WhatsApp", "acao": "whatsapp", "estilo": "principal verde" },
+        { "texto": "Conhecer os serviços", "link": "#servicos", "estilo": "link sublinhado azul" }
+      ],
+      "composicao_de_fotos": {
+        "foto_principal": { "imagem": "cabelo", "tamanho": "470x620px", "formato": "arco", "posicao": "direita" },
+        "foto_secundaria": { "imagem": "andador_homem", "tamanho": "190x190px", "formato": "círculo com borda branca de 8px", "posicao": "sobreposta, canto inferior esquerdo", "esconder_no_celular": true },
+        "selo": { "icone": "relógio", "titulo": "Atendimento 24 horas", "texto": "Dias úteis, fins de semana e feriados", "estilo": "cartão branco com sombra, sobreposto no canto superior esquerdo da foto" }
+      }
+    },
+    {
+      "id": "confianca",
+      "tipo": "faixa_de_destaques",
+      "estilo": "Cartão branco largo sobreposto logo abaixo do topo, com 4 colunas separadas por linhas finas (2x2 no celular)",
+      "itens": [
+        { "destaque": "+10 anos", "texto": "de experiência da fundadora no cuidado de idosos" },
+        { "destaque": "24 horas", "texto": "cuidado de dia, de noite e nos feriados" },
+        { "destaque": "Em casa", "texto": "e também no hospital, em consultas e exames" },
+        { "destaque": "Sob medida", "texto": "uma proposta feita para cada família" }
+      ],
+      "fonte_destaque": "Lora 34px (celular 24px), azul-marinho"
+    },
+    {
+      "id": "sobre",
+      "tipo": "imagem_e_texto",
+      "layout_computador": "Foto à esquerda (480x580px, cantos de 24px) sobre um bloco verde-claro deslocado; texto à direita",
+      "imagem": "cadeira",
+      "etiqueta": "Como se fosse da família",
+      "titulo_h2": "Quando você nos confia quem você ama, ele passa a ser cuidado como alguém da nossa família.",
+      "paragrafos": [
+        "A Agência de Cuidadores Gonçalves nasceu da experiência de Ana Paula, técnica de enfermagem que há mais de 10 anos dedica seu trabalho ao cuidado de idosos.",
+        "Antes do primeiro dia, ela conversa com a família para entender a rotina, os medicamentos e os contatos de emergência. Depois, escolhe um cuidador entrevistado e avaliado para aquele perfil, e acompanha tudo de perto."
+      ],
+      "citacao": {
+        "texto": "Mais do que cuidar, é acolher com respeito e segurança.",
+        "autor": "Ana Paula",
+        "cargo": "Fundadora e técnica de enfermagem",
+        "estilo": "Cartão branco, texto em Lora itálico 25px azul-marinho"
+      }
+    },
+    {
+      "id": "servicos",
+      "tipo": "servicos",
+      "fundo": "#F2ECE3",
+      "etiqueta": "Nossos serviços",
+      "titulo_h2": "Cuidado para cada fase da vida, onde o seu familiar estiver.",
+      "texto_lateral": "Por hora, por visita, por diária ou por mês. Cada família recebe um orçamento feito para a sua necessidade.",
+      "cartoes_com_foto": {
+        "layout": "3 colunas no computador, 1 no celular. Foto no topo (340px de altura; 220px no celular), texto embaixo, efeito leve de zoom na foto ao passar o mouse",
+        "itens": [
+          { "titulo": "Cuidado em casa", "imagem": "andador_homem", "texto": "Banho, higiene, alimentação, medicação conforme a receita e apoio para andar, respeitando a rotina da casa.", "link": { "texto": "Saiba mais →", "acao": "whatsapp" } },
+          { "titulo": "Acompanhamento no hospital", "imagem": "pressao", "texto": "Presença durante a internação, em consultas e em exames, para o seu familiar nunca ficar sozinho.", "link": { "texto": "Saiba mais →", "acao": "whatsapp" } },
+          { "titulo": "Pós-operatório", "imagem": "andador_mulher", "texto": "Apoio na recuperação em casa, com atenção aos horários, ao repouso e aos primeiros passos.", "link": { "texto": "Saiba mais →", "acao": "whatsapp" } }
+        ]
+      },
+      "cartoes_de_texto": {
+        "layout": "3 colunas no computador, 1 no celular",
+        "itens": [
+          { "titulo": "Alzheimer e outras demências", "texto": "Paciência, rotina e um rosto conhecido todos os dias, o que faz diferença para quem vive com a memória fragilizada.", "estilo": "fundo azul-marinho, texto branco" },
+          { "titulo": "Pessoas acamadas", "texto": "Higiene no leito, mudança de posição, alimentação e conforto, com todo o cuidado que o corpo pede.", "estilo": "fundo branco com borda fina" },
+          { "titulo": "Companhia e passeios", "texto": "Leitura, jogos, conversas, passeios e visitas em casas de repouso, para os dias terem mais alegria.", "estilo": "fundo branco com borda fina" }
+        ]
+      }
+    },
+    {
+      "id": "como-comeca",
+      "tipo": "etapas",
+      "etiqueta": "Como começa",
+      "titulo_h2": "Do primeiro contato ao primeiro dia de cuidado.",
+      "layout": "4 colunas com linha fina no topo (1 coluna no celular). Número em Lora itálico 44px, verde",
+      "etapas": [
+        { "numero": 1, "titulo": "Uma conversa", "texto": "Pelo WhatsApp, você conta quem precisa de cuidado e como é a rotina." },
+        { "numero": 2, "titulo": "Entrevista com a família", "texto": "Entendemos as necessidades, os medicamentos e os contatos de emergência." },
+        { "numero": 3, "titulo": "O cuidador certo", "texto": "Indicamos um profissional avaliado para o perfil. Se quiser, comece com uma diária experimental." },
+        { "numero": 4, "titulo": "Perto de você", "texto": "Contrato por escrito, notícias da rotina e substituição rápida em caso de imprevisto." }
+      ]
+    },
+    {
+      "id": "depoimentos",
+      "tipo": "depoimentos_e_formulario",
+      "fundo": "#EAF1F8",
+      "layout_computador": "Duas colunas: depoimentos à esquerda, formulário à direita",
+      "etiqueta": "Depoimentos",
+      "titulo_h2": "Palavras de quem confiou em nós.",
+      "depoimentos": [
+        { "texto": "[Depoimento real de uma família atendida, publicado com autorização.]", "nome": "[Nome]", "cidade": "[cidade]", "relacao": "filha de [paciente]", "observacao": "Placeholder. Nunca inventar depoimento. Quando houver vários, exibir em carrossel simples com setas." }
+      ],
+      "nota": "Cada depoimento é lido pela Ana Paula e publicado depois da aprovação da família.",
+      "formulario": {
+        "titulo": "Deixe seu depoimento",
+        "subtitulo": "Sua experiência ajuda outras famílias a se sentirem seguras.",
+        "campos": [
+          { "id": "dep-nome", "rotulo": "Seu nome", "tipo": "text", "exemplo": "Ex.: Mariana Souza", "obrigatorio": true },
+          { "id": "dep-cidade", "rotulo": "Cidade", "tipo": "text", "exemplo": "Ex.: São José" },
+          { "id": "dep-texto", "rotulo": "Como foi o cuidado com o seu familiar?", "tipo": "textarea", "linhas": 4, "obrigatorio": true },
+          { "id": "dep-ok", "rotulo": "Autorizo a publicação do meu depoimento no site.", "tipo": "checkbox", "obrigatorio": true }
+        ],
+        "botao": { "texto": "Enviar depoimento", "cor": "#173F7A" },
+        "ao_enviar": "Validar campos obrigatórios e abrir o WhatsApp da empresa com o depoimento formatado. Mostrar a mensagem: 'Obrigada! Seu depoimento será publicado após a aprovação.'"
+      }
+    },
+    {
+      "id": "duvidas",
+      "tipo": "faq",
+      "layout_computador": "Duas colunas: título à esquerda, perguntas à direita",
+      "etiqueta": "Dúvidas frequentes",
+      "titulo_h2": "O que as famílias costumam perguntar.",
+      "texto": "Não encontrou a sua dúvida? Fale com a gente pelo WhatsApp.",
+      "perguntas": [
+        { "pergunta": "Quanto custa um cuidador?", "resposta": "Depende do tipo de cuidado, dos dias e dos horários. Por isso, cada família recebe um orçamento personalizado depois de uma conversa rápida." },
+        { "pergunta": "Posso conhecer o cuidador antes de fechar?", "resposta": "Sim. Você pode começar com uma diária experimental, paga, para ver se o cuidador combina com a rotina do seu familiar." },
+        { "pergunta": "O cuidador pode dar os remédios?", "resposta": "Sim, sempre conforme a receita médica. O cuidador não muda doses nem horários por conta própria e não faz procedimentos invasivos." },
+        { "pergunta": "E se o cuidador tiver um imprevisto?", "resposta": "Enviamos outro cuidador o mais rápido possível, para o seu familiar não ficar sem atendimento." },
+        { "pergunta": "Vocês atendem à noite e nos feriados?", "resposta": "Sim, atendemos 24 horas, inclusive fins de semana e feriados. Nos feriados, o valor da diária é cobrado em dobro." },
+        { "pergunta": "Quais cidades vocês atendem?", "resposta": "Florianópolis, São José, Palhoça e Biguaçu." }
+      ]
+    },
+    {
+      "id": "contato",
+      "tipo": "chamada_final",
+      "estilo": "Cartão grande azul-marinho (#173F7A) com cantos de 32px; texto à esquerda e logo dentro de um círculo branco de 300px à direita (no celular, o logo fica acima com 120px)",
+      "titulo_h2": "Vamos conversar sobre quem você ama?",
+      "texto": "Conte como é a rotina do seu familiar. Você recebe uma proposta feita para a sua família, sem compromisso.",
+      "botao": { "texto": "Conversar no WhatsApp", "acao": "whatsapp", "cor": "#2E7A32" },
+      "texto_ao_lado_do_botao": "Atendimento 24 horas",
+      "imagem": "logo"
+    },
+    {
+      "id": "rodape",
+      "tipo": "footer",
+      "fundo": "#102C57",
+      "cor_texto": "#C3D3EA",
+      "colunas": [
+        { "titulo": null, "conteudo": ["Agência de Cuidadores", "Gonçalves (em Courgette)", "Cuidar com amor, dedicação e profissionalismo."] },
+        { "titulo": "Serviços", "conteudo": ["Cuidado em casa", "Acompanhamento no hospital", "Pós-operatório", "Alzheimer e demências", "Pessoas acamadas"] },
+        { "titulo": "Onde atendemos", "conteudo": ["Florianópolis", "São José", "Palhoça", "Biguaçu"] },
+        { "titulo": "Contato", "conteudo": ["WhatsApp {CONFIG.whatsapp_exibicao}", "{CONFIG.email}", "Instagram {CONFIG.instagram}", "Atendimento 24 horas"] }
+      ],
+      "linha_final": {
+        "esquerda": "© 2026 Agência de Cuidadores Gonçalves · CNPJ {CONFIG.cnpj}",
+        "direita": { "texto": "Política de privacidade", "link": "#", "observacao": "Página a criar (LGPD)" }
+      }
+    }
+  ],
+
+  "pendencias": [
+    "Número do WhatsApp, e-mail e Instagram da empresa",
+    "CNPJ regularizado",
+    "Logo em alta resolução, sem fundo",
+    "Fotos reais da Ana Paula e da equipe, e confirmação da licença das fotos atuais",
+    "Depoimentos reais com autorização",
+    "Texto da política de privacidade"
+  ]
+}
