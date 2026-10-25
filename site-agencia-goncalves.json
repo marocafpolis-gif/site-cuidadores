@@ -221,6 +221,17 @@
         "alt": "Cuidadora aferindo a pressão de um senhor",
         "object_position": "center 40%",
         "atencao": "Resolução baixa (351x626). Usar no máximo a 400px de largura ou trocar por uma foto maior."
+      },
+      "acamada": {
+        "arquivo": "acamada.jpg",
+        "alt": "Cuidadora ajeitando a coberta de um senhor deitado na cama",
+        "object_position": "center 30%",
+        "origem": "Recorte só da foto da arte 'Cuidado de pessoas acamadas', sem os textos"
+      },
+      "passeio": {
+        "arquivo": "passeio.jpg",
+        "alt": "Cuidadora sorrindo com uma senhora em cadeira de rodas durante um passeio ao ar livre",
+        "object_position": "center 28%"
       }
     }
   },
@@ -447,12 +458,14 @@
           {
             "titulo": "Pessoas acamadas",
             "texto": "Higiene no leito, mudança de posição, alimentação e conforto, com todo o cuidado que o corpo pede.",
-            "estilo": "fundo branco com borda fina"
+            "estilo": "fundo branco, foto no topo (240px; 200px no celular)",
+            "imagem": "acamada"
           },
           {
             "titulo": "Companhia e passeios",
             "texto": "Leitura, jogos, conversas, passeios e visitas em casas de repouso, para os dias terem mais alegria.",
-            "estilo": "fundo branco com borda fina"
+            "estilo": "fundo branco, foto no topo (240px; 200px no celular)",
+            "imagem": "passeio"
           }
         ]
       }
