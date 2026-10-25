@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Agência de Cuidadores Gonçalves | Cuidador de idosos em Florianópolis, São José, Palhoça e Biguaçu</title>
-<meta name="description" content="Cuidadores de idosos selecionados por uma técnica de enfermagem com mais de 10 anos de experiência. Atendimento 24 horas, em casa e no hospital, na Grande Florianópolis.">
+<meta name="description" content="Cuidadores de idosos selecionados com rigor para as necessidades de cada paciente. Atendimento 24 horas, em casa e no hospital, em Florianópolis, São José, Palhoça e Biguaçu.">
 <meta name="keywords" content="cuidador de idosos Florianópolis, cuidador de idosos São José, cuidador de idosos Palhoça, cuidador de idosos Biguaçu, acompanhante hospitalar idoso, cuidador pós-operatório, cuidador para Alzheimer, cuidador 24 horas">
 <meta name="theme-color" content="#173F7A">
 
@@ -12,7 +12,7 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Agência de Cuidadores Gonçalves">
 <meta property="og:title" content="Agência de Cuidadores Gonçalves | Cuidador de idosos na Grande Florianópolis">
-<meta property="og:description" content="Cuidadores de idosos selecionados por uma técnica de enfermagem com mais de 10 anos de experiência. Atendimento 24 horas, em casa e no hospital, na Grande Florianópolis.">
+<meta property="og:description" content="Cuidadores de idosos selecionados com rigor para as necessidades de cada paciente. Atendimento 24 horas, em casa e no hospital, em Florianópolis, São José, Palhoça e Biguaçu.">
 <!-- Quando o site tiver domínio, troque pelo endereço completo: https://seudominio.com.br/img/logo.jpg -->
 <meta property="og:image" content="img/logo.jpg">
 <meta property="og:image:alt" content="Logo da Agência de Cuidadores Gonçalves">
@@ -29,7 +29,7 @@
   "@context": "https://schema.org",
   "@type": ["HomeHealthCareService", "LocalBusiness"],
   "name": "Agência de Cuidadores Gonçalves",
-  "description": "Cuidadores de idosos selecionados por uma técnica de enfermagem com mais de 10 anos de experiência. Atendimento 24 horas, em casa e no hospital, na Grande Florianópolis.",
+  "description": "Cuidadores de idosos selecionados com rigor para as necessidades de cada paciente. Atendimento 24 horas, em casa e no hospital, em Florianópolis, São José, Palhoça e Biguaçu.",
   "image": "img/logo.jpg",
   "areaServed": [
     { "@type": "City", "name": "Florianópolis" },
@@ -395,6 +395,11 @@ body.menu-aberto { overflow: hidden; }
 .sobre-texto h2 { margin-bottom: 28px; }
 .sobre-texto p + p { margin-top: 18px; }
 .sobre-texto > p:not(.etiqueta) { color: var(--texto-suave); }
+.selecao { list-style: none; margin: 28px 0 0; padding: 0; display: grid; gap: 12px; }
+.selecao li { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 15.5px; color: var(--azul-marinho); line-height: 1.35; }
+.selecao .icone { width: 36px; height: 36px; border-radius: 50%; background: var(--verde-claro); color: var(--verde); display: grid; place-items: center; flex: none; }
+.selecao .icone svg { width: 18px; height: 18px; }
+@media (min-width: 640px) { .selecao { grid-template-columns: repeat(3, 1fr); gap: 16px; } .selecao li { align-items: flex-start; flex-direction: column; gap: 10px; } }
 .citacao {
   margin: 36px 0 0; background: #fff; border-radius: var(--raio-cartao); padding: 30px 26px 26px 30px; box-shadow: var(--sombra);
   border: 1px solid rgba(226, 216, 195, .55); position: relative; overflow: hidden;
@@ -403,7 +408,7 @@ body.menu-aberto { overflow: hidden; }
 .citacao .aspa-grande { position: absolute; right: 18px; top: -10px; font: italic 400 130px/1 var(--f-titulo); color: rgba(219, 170, 101, .28); pointer-events: none; }
 .citacao blockquote { position: relative; margin: 0; font: italic 400 21px/1.4 var(--f-titulo); color: var(--azul-marinho); }
 .citacao figcaption { position: relative; margin-top: 18px; display: flex; align-items: center; gap: 14px; font-size: 15px; color: var(--texto-legenda); line-height: 1.45; }
-.citacao figcaption .inicial { width: 44px; height: 44px; border-radius: 50%; background: var(--azul-marinho); color: #fff; display: grid; place-items: center; font: 400 18px var(--f-titulo); flex: none; }
+.citacao figcaption .inicial { width: 48px; height: 48px; border-radius: 50%; background: var(--fundo); border: 2px solid var(--dourado); padding: 3px; object-fit: contain; flex: none; }
 .citacao figcaption strong { color: var(--texto); font-weight: 700; display: block; }
 @media (min-width: 1024px) {
   .sobre .container { grid-template-columns: minmax(0, 480px) minmax(0, 1fr); gap: clamp(64px, 7.5vw, 112px); }
@@ -763,7 +768,7 @@ body.menu-aberto { overflow: hidden; }
       <div class="hero-texto">
         <p class="etiqueta">Cuidadores de idosos na Grande Florianópolis</p>
         <h1 id="titulo-inicio">Cuidar de quem dedicou a vida com amor é <em class="destaque sublinhado">preservar histórias<svg viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M3 8.5C45 3 110 1.5 197 6.5"/></svg></em> e garantir dignidade.</h1>
-        <p class="lead">Cuidadores selecionados por uma técnica de enfermagem com mais de 10 anos de experiência com idosos. Em casa ou no hospital, de dia ou de noite.</p>
+        <p class="lead">Cada cuidador passa por uma seleção rigorosa e é escolhido de acordo com as necessidades do seu familiar. Em casa ou no hospital, de dia ou de noite, você conta com a gente.</p>
         <div class="hero-acoes">
           <a class="btn btn-wa" href="#contato" data-wa><svg aria-hidden="true"><use href="#i-wa"/></svg>Conversar no WhatsApp</a>
           <a class="link-seta" href="#servicos">Conhecer os serviços <span class="seta" aria-hidden="true">→</span></a>
@@ -803,10 +808,10 @@ body.menu-aberto { overflow: hidden; }
   <section class="confianca" id="confianca" aria-label="Por que confiar">
     <div class="container reveal">
       <ul>
-        <li><span class="icone" aria-hidden="true"><svg><use href="#i-medalha"/></svg></span><strong><span data-conta="10" data-prefixo="+">+10</span> anos</strong><span class="txt">de experiência da fundadora no cuidado de idosos</span></li>
-        <li><span class="icone" aria-hidden="true"><svg><use href="#i-relogio"/></svg></span><strong><span data-conta="24">24</span> horas</strong><span class="txt">cuidado de dia, de noite e nos feriados</span></li>
-        <li><span class="icone" aria-hidden="true"><svg><use href="#i-casa"/></svg></span><strong>Em casa</strong><span class="txt">e também no hospital, em consultas e exames</span></li>
-        <li><span class="icone" aria-hidden="true"><svg><use href="#i-coracao"/></svg></span><strong>Sob medida</strong><span class="txt">uma proposta feita para cada família</span></li>
+        <li><span class="icone" aria-hidden="true"><svg><use href="#i-escudo"/></svg></span><strong>Seleção rigorosa</strong><span class="txt">cada cuidador é entrevistado e avaliado antes de atender</span></li>
+        <li><span class="icone" aria-hidden="true"><svg><use href="#i-medalha"/></svg></span><strong><span data-conta="10" data-prefixo="+">+10</span> anos</strong><span class="txt">de experiência no cuidado de idosos por trás de cada escolha</span></li>
+        <li><span class="icone" aria-hidden="true"><svg><use href="#i-relogio"/></svg></span><strong><span data-conta="24">24</span> horas</strong><span class="txt">de dia, de noite, nos fins de semana e feriados</span></li>
+        <li><span class="icone" aria-hidden="true"><svg><use href="#i-coracao"/></svg></span><strong>Sob medida</strong><span class="txt">o cuidador certo para o perfil do seu familiar</span></li>
       </ul>
     </div>
   </section>
@@ -822,12 +827,17 @@ body.menu-aberto { overflow: hidden; }
       <div class="sobre-texto reveal" style="--d:.12s">
         <p class="etiqueta">Como se fosse da família</p>
         <h2 id="titulo-sobre">Quando você nos confia quem você ama, ele passa a ser cuidado <em class="destaque">como alguém da nossa família.</em></h2>
-        <p>A Agência de Cuidadores Gonçalves nasceu da experiência de Ana Paula, técnica de enfermagem que há mais de 10 anos dedica seu trabalho ao cuidado de idosos.</p>
-        <p>Antes do primeiro dia, ela conversa com a família para entender a rotina, os medicamentos e os contatos de emergência. Depois, escolhe um cuidador entrevistado e avaliado para aquele perfil, e acompanha tudo de perto.</p>
+        <p>Sabemos o quanto é difícil confiar quem você ama a outra pessoa. Por isso, na Agência de Cuidadores Gonçalves, nenhum cuidador chega à sua casa sem antes passar por uma seleção rigorosa.</p>
+        <p>Tudo começa com uma conversa para entender a rotina, os medicamentos, as necessidades do paciente e os contatos de emergência. Com isso, indicamos o profissional com o perfil certo e seguimos acompanhando o atendimento de perto, junto com a família.</p>
+        <ul class="selecao" aria-label="Como selecionamos os cuidadores">
+          <li><span class="icone" aria-hidden="true"><svg><use href="#i-escudo"/></svg></span>Entrevista com cada cuidador</li>
+          <li><span class="icone" aria-hidden="true"><svg><use href="#i-escudo"/></svg></span>Avaliação antes de indicar</li>
+          <li><span class="icone" aria-hidden="true"><svg><use href="#i-escudo"/></svg></span>Escolha pelo perfil do paciente</li>
+        </ul>
         <figure class="citacao">
           <span class="aspa-grande" aria-hidden="true">”</span>
           <blockquote>“Mais do que cuidar, é acolher com respeito e segurança.”</blockquote>
-          <figcaption><span class="inicial" aria-hidden="true">A</span><span><strong>Ana Paula</strong>Fundadora e técnica de enfermagem</span></figcaption>
+          <figcaption><img class="inicial" src="img/logo-icone.png" alt="" width="440" height="440" loading="lazy"><span><strong>Agência de Cuidadores Gonçalves</strong>O nosso compromisso com cada família</span></figcaption>
         </figure>
       </div>
     </div>
@@ -841,7 +851,7 @@ body.menu-aberto { overflow: hidden; }
           <p class="etiqueta">Nossos serviços</p>
           <h2 id="titulo-servicos">Cuidado para cada fase da vida, <em class="destaque">onde o seu familiar estiver.</em></h2>
         </div>
-        <p>Por hora, por visita, por diária ou por mês. Cada família recebe um orçamento feito para a sua necessidade.</p>
+        <p>Por hora, por visita, por diária ou por mês. Você recebe um orçamento pensado para a necessidade do seu familiar, sem compromisso.</p>
       </div>
 
       <ul class="cartoes-foto">
@@ -849,7 +859,7 @@ body.menu-aberto { overflow: hidden; }
           <div class="moldura"><span class="indice" aria-hidden="true">01</span><img src="img/andador-homem.jpg" alt="Cuidadora apoiando um senhor com andador em casa" width="736" height="1308" loading="lazy" style="object-position:center 22%"></div>
           <div class="corpo">
             <h3>Cuidado em casa</h3>
-            <p>Banho, higiene, alimentação, medicação conforme a receita e apoio para andar, respeitando a rotina da casa.</p>
+            <p>Banho, higiene, alimentação, medicação conforme a receita e apoio para caminhar, sempre respeitando a rotina e o jeito da casa.</p>
             <a class="link-seta" href="#contato" data-wa data-wa-msg="Olá! Vim pelo site e gostaria de saber mais sobre o cuidado em casa." aria-label="Saiba mais sobre Cuidado em casa pelo WhatsApp">Saiba mais <span class="seta" aria-hidden="true">→</span></a>
           </div>
         </li>
@@ -857,7 +867,7 @@ body.menu-aberto { overflow: hidden; }
           <div class="moldura"><span class="indice" aria-hidden="true">02</span><img src="img/pressao.jpg" alt="Cuidadora aferindo a pressão de um senhor" width="351" height="626" loading="lazy" style="object-position:center 40%"></div>
           <div class="corpo">
             <h3>Acompanhamento no hospital</h3>
-            <p>Presença durante a internação, em consultas e em exames, para o seu familiar nunca ficar sozinho.</p>
+            <p>Companhia e atenção durante a internação, em consultas e em exames, para o seu familiar nunca ficar sozinho.</p>
             <a class="link-seta" href="#contato" data-wa data-wa-msg="Olá! Vim pelo site e gostaria de saber mais sobre o acompanhamento no hospital." aria-label="Saiba mais sobre Acompanhamento no hospital pelo WhatsApp">Saiba mais <span class="seta" aria-hidden="true">→</span></a>
           </div>
         </li>
@@ -899,9 +909,9 @@ body.menu-aberto { overflow: hidden; }
         <h2 id="titulo-etapas">Do primeiro contato ao <em class="destaque">primeiro dia de cuidado.</em></h2>
       </div>
       <ol class="etapas">
-        <li class="reveal"><span class="numero" aria-hidden="true">1</span><h3>Uma conversa</h3><p>Pelo WhatsApp, você conta quem precisa de cuidado e como é a rotina.</p></li>
-        <li class="reveal" style="--d:.12s"><span class="numero" aria-hidden="true">2</span><h3>Entrevista com a família</h3><p>Entendemos as necessidades, os medicamentos e os contatos de emergência.</p></li>
-        <li class="reveal" style="--d:.24s"><span class="numero" aria-hidden="true">3</span><h3>O cuidador certo</h3><p>Indicamos um profissional avaliado para o perfil. Se quiser, comece com uma diária experimental.</p></li>
+        <li class="reveal"><span class="numero" aria-hidden="true">1</span><h3>Uma conversa</h3><p>Pelo WhatsApp, você conta quem precisa de cuidado e como é a rotina. Sem compromisso.</p></li>
+        <li class="reveal" style="--d:.12s"><span class="numero" aria-hidden="true">2</span><h3>Entrevista com a família</h3><p>Conhecemos as necessidades do paciente, os medicamentos e os contatos de emergência.</p></li>
+        <li class="reveal" style="--d:.24s"><span class="numero" aria-hidden="true">3</span><h3>O cuidador certo</h3><p>Selecionamos com rigor um profissional entrevistado e avaliado para aquele perfil. Se quiser, comece com uma diária experimental.</p></li>
         <li class="reveal" style="--d:.36s"><span class="numero" aria-hidden="true">4</span><h3>Perto de você</h3><p>Contrato por escrito, notícias da rotina e substituição rápida em caso de imprevisto.</p></li>
       </ol>
     </div>
@@ -925,7 +935,7 @@ body.menu-aberto { overflow: hidden; }
             <button type="button" data-dir="1" aria-label="Próximo depoimento"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
           </div>
         </div>
-        <p class="dep-nota"><svg aria-hidden="true"><use href="#i-escudo"/></svg>Cada depoimento é lido pela Ana Paula e publicado depois da aprovação da família.</p>
+        <p class="dep-nota"><svg aria-hidden="true"><use href="#i-escudo"/></svg>Cada depoimento é lido pela agência e publicado somente com a aprovação da família.</p>
       </div>
 
       <form class="form-card reveal" id="form-depoimento" novalidate style="--d:.12s">
@@ -967,6 +977,10 @@ body.menu-aberto { overflow: hidden; }
         <details open>
           <summary>Quanto custa um cuidador?<span class="mais" aria-hidden="true"></span></summary>
           <p class="resposta">Depende do tipo de cuidado, dos dias e dos horários. Por isso, cada família recebe um orçamento personalizado depois de uma conversa rápida.</p>
+        </details>
+        <details>
+          <summary>Como os cuidadores são selecionados?<span class="mais" aria-hidden="true"></span></summary>
+          <p class="resposta">Cada cuidador é entrevistado e avaliado antes de ser indicado. Depois, escolhemos o profissional de acordo com o perfil e as necessidades do paciente, e seguimos acompanhando o atendimento.</p>
         </details>
         <details>
           <summary>Posso conhecer o cuidador antes de fechar?<span class="mais" aria-hidden="true"></span></summary>
@@ -1247,7 +1261,7 @@ const CONFIG = {
     }
 
     const mensagem =
-      "Olá, Ana Paula! Quero deixar um depoimento pelo site.\n\n" +
+      "Olá! Quero deixar um depoimento pelo site da Agência de Cuidadores Gonçalves.\n\n" +
       "Nome: " + nome.value.trim() + "\n" +
       "Cidade: " + (cidade.value.trim() || "não informada") + "\n\n" +
       "Depoimento:\n" + texto.value.trim() + "\n\n" +

@@ -1,7 +1,7 @@
 {
   "projeto": {
     "nome": "Site Agência de Cuidadores Gonçalves",
-    "versao": "3.0",
+    "versao": "3.1",
     "data": "2026-10-25",
     "objetivo": "Apresentar os serviços com clareza, transmitir confiança de família e levar a família a conversar no WhatsApp.",
     "acao_principal": "Conversar no WhatsApp",
@@ -29,7 +29,8 @@
     "form_depoimento": "Formulário visual (nome, cidade, texto, autorização). Ao enviar, montar uma mensagem de WhatsApp para a Ana com o depoimento, já que o site é HTML estático. Na versão WordPress, trocar pelo plugin Strong Testimonials com aprovação.",
     "acessibilidade": "Contraste mínimo 4.5:1, textos alternativos em todas as imagens, foco visível nos links e botões, botões com no mínimo 48px de altura, tags semânticas (header, nav, main, section, footer).",
     "seo": "Incluir title, meta description, Open Graph e dados estruturados JSON-LD do tipo HomeHealthCareService / LocalBusiness com as cidades atendidas. Um único h1.",
-    "imagens": "Usar loading='lazy' em todas, exceto a do topo. object-fit: cover com o object-position indicado em cada imagem."
+    "imagens": "Usar loading='lazy' em todas, exceto a do topo. object-fit: cover com o object-position indicado em cada imagem.",
+    "nome_da_proprietaria": "Não citar o nome nem a história pessoal da proprietária em nenhum texto. A mensagem central é a seleção rigorosa dos cuidadores e o acompanhamento de perto."
   },
   "config": {
     "whatsapp": "",
@@ -185,7 +186,7 @@
   },
   "imagens": {
     "pasta": "img/",
-    "observacao": "Fotos de banco de imagem enviadas pela Mari. Confirmar a licença de uso e, quando possível, substituir por fotos reais da Ana Paula e da equipe.",
+    "observacao": "Fotos de banco de imagem enviadas pela Mari. Confirmar a licença de uso e, quando possível, substituir por fotos reais da equipe.",
     "arquivos": {
       "logo": {
         "arquivo": "logo.jpg",
@@ -225,7 +226,7 @@
   },
   "seo": {
     "title": "Agência de Cuidadores Gonçalves | Cuidador de idosos em Florianópolis, São José, Palhoça e Biguaçu",
-    "meta_description": "Cuidadores de idosos selecionados por uma técnica de enfermagem com mais de 10 anos de experiência. Atendimento 24 horas, em casa e no hospital, na Grande Florianópolis.",
+    "meta_description": "Cuidadores de idosos selecionados com rigor para as necessidades de cada paciente. Atendimento 24 horas, em casa e no hospital, em Florianópolis, São José, Palhoça e Biguaçu.",
     "palavras_chave": [
       "cuidador de idosos Florianópolis",
       "cuidador de idosos São José",
@@ -314,7 +315,7 @@
         "trecho": "preservar histórias",
         "estilo": "itálico, verde #2E7A32"
       },
-      "subtitulo": "Cuidadores selecionados por uma técnica de enfermagem com mais de 10 anos de experiência com idosos. Em casa ou no hospital, de dia ou de noite.",
+      "subtitulo": "Cada cuidador passa por uma seleção rigorosa e é escolhido de acordo com as necessidades do seu familiar. Em casa ou no hospital, de dia ou de noite, você conta com a gente.",
       "botoes": [
         {
           "texto": "Conversar no WhatsApp",
@@ -355,20 +356,20 @@
       "estilo": "Cartão branco largo sobreposto logo abaixo do topo, com 4 colunas separadas por linhas finas (2x2 no celular)",
       "itens": [
         {
+          "destaque": "Seleção rigorosa",
+          "texto": "cada cuidador é entrevistado e avaliado antes de atender"
+        },
+        {
           "destaque": "+10 anos",
-          "texto": "de experiência da fundadora no cuidado de idosos"
+          "texto": "de experiência no cuidado de idosos por trás de cada escolha"
         },
         {
           "destaque": "24 horas",
-          "texto": "cuidado de dia, de noite e nos feriados"
-        },
-        {
-          "destaque": "Em casa",
-          "texto": "e também no hospital, em consultas e exames"
+          "texto": "de dia, de noite, nos fins de semana e feriados"
         },
         {
           "destaque": "Sob medida",
-          "texto": "uma proposta feita para cada família"
+          "texto": "o cuidador certo para o perfil do seu familiar"
         }
       ],
       "fonte_destaque": "Lora 34px (celular 24px), azul-marinho"
@@ -381,15 +382,20 @@
       "etiqueta": "Como se fosse da família",
       "titulo_h2": "Quando você nos confia quem você ama, ele passa a ser cuidado como alguém da nossa família.",
       "paragrafos": [
-        "A Agência de Cuidadores Gonçalves nasceu da experiência de Ana Paula, técnica de enfermagem que há mais de 10 anos dedica seu trabalho ao cuidado de idosos.",
-        "Antes do primeiro dia, ela conversa com a família para entender a rotina, os medicamentos e os contatos de emergência. Depois, escolhe um cuidador entrevistado e avaliado para aquele perfil, e acompanha tudo de perto."
+        "Sabemos o quanto é difícil confiar quem você ama a outra pessoa. Por isso, na Agência de Cuidadores Gonçalves, nenhum cuidador chega à sua casa sem antes passar por uma seleção rigorosa.",
+        "Tudo começa com uma conversa para entender a rotina, os medicamentos, as necessidades do paciente e os contatos de emergência. Com isso, indicamos o profissional com o perfil certo e seguimos acompanhando o atendimento de perto, junto com a família."
       ],
       "citacao": {
         "texto": "Mais do que cuidar, é acolher com respeito e segurança.",
-        "autor": "Ana Paula",
-        "cargo": "Fundadora e técnica de enfermagem",
-        "estilo": "Cartão branco, texto em Lora itálico 25px azul-marinho"
-      }
+        "autor": "Agência de Cuidadores Gonçalves",
+        "cargo": "O nosso compromisso com cada família",
+        "estilo": "Cartão branco, texto em DM Serif Display itálico, com o ícone da logo"
+      },
+      "lista_selecao": [
+        "Entrevista com cada cuidador",
+        "Avaliação antes de indicar",
+        "Escolha pelo perfil do paciente"
+      ]
     },
     {
       "id": "servicos",
@@ -397,14 +403,14 @@
       "fundo": "#F2ECE3",
       "etiqueta": "Nossos serviços",
       "titulo_h2": "Cuidado para cada fase da vida, onde o seu familiar estiver.",
-      "texto_lateral": "Por hora, por visita, por diária ou por mês. Cada família recebe um orçamento feito para a sua necessidade.",
+      "texto_lateral": "Por hora, por visita, por diária ou por mês. Você recebe um orçamento pensado para a necessidade do seu familiar, sem compromisso.",
       "cartoes_com_foto": {
         "layout": "3 colunas no computador, 1 no celular. Foto no topo (340px de altura; 220px no celular), texto embaixo, efeito leve de zoom na foto ao passar o mouse",
         "itens": [
           {
             "titulo": "Cuidado em casa",
             "imagem": "andador_homem",
-            "texto": "Banho, higiene, alimentação, medicação conforme a receita e apoio para andar, respeitando a rotina da casa.",
+            "texto": "Banho, higiene, alimentação, medicação conforme a receita e apoio para caminhar, sempre respeitando a rotina e o jeito da casa.",
             "link": {
               "texto": "Saiba mais →",
               "acao": "whatsapp"
@@ -413,7 +419,7 @@
           {
             "titulo": "Acompanhamento no hospital",
             "imagem": "pressao",
-            "texto": "Presença durante a internação, em consultas e em exames, para o seu familiar nunca ficar sozinho.",
+            "texto": "Companhia e atenção durante a internação, em consultas e em exames, para o seu familiar nunca ficar sozinho.",
             "link": {
               "texto": "Saiba mais →",
               "acao": "whatsapp"
@@ -461,17 +467,17 @@
         {
           "numero": 1,
           "titulo": "Uma conversa",
-          "texto": "Pelo WhatsApp, você conta quem precisa de cuidado e como é a rotina."
+          "texto": "Pelo WhatsApp, você conta quem precisa de cuidado e como é a rotina. Sem compromisso."
         },
         {
           "numero": 2,
           "titulo": "Entrevista com a família",
-          "texto": "Entendemos as necessidades, os medicamentos e os contatos de emergência."
+          "texto": "Conhecemos as necessidades do paciente, os medicamentos e os contatos de emergência."
         },
         {
           "numero": 3,
           "titulo": "O cuidador certo",
-          "texto": "Indicamos um profissional avaliado para o perfil. Se quiser, comece com uma diária experimental."
+          "texto": "Selecionamos com rigor um profissional entrevistado e avaliado para aquele perfil. Se quiser, comece com uma diária experimental."
         },
         {
           "numero": 4,
@@ -496,7 +502,7 @@
           "observacao": "Placeholder. Nunca inventar depoimento. Quando houver vários, exibir em carrossel simples com setas."
         }
       ],
-      "nota": "Cada depoimento é lido pela Ana Paula e publicado depois da aprovação da família.",
+      "nota": "Cada depoimento é lido pela agência e publicado somente com a aprovação da família.",
       "formulario": {
         "titulo": "Deixe seu depoimento",
         "subtitulo": "Sua experiência ajuda outras famílias a se sentirem seguras.",
@@ -546,6 +552,10 @@
         {
           "pergunta": "Quanto custa um cuidador?",
           "resposta": "Depende do tipo de cuidado, dos dias e dos horários. Por isso, cada família recebe um orçamento personalizado depois de uma conversa rápida."
+        },
+        {
+          "pergunta": "Como os cuidadores são selecionados?",
+          "resposta": "Cada cuidador é entrevistado e avaliado antes de ser indicado. Depois, escolhemos o profissional de acordo com o perfil e as necessidades do paciente, e seguimos acompanhando o atendimento."
         },
         {
           "pergunta": "Posso conhecer o cuidador antes de fechar?",
@@ -640,7 +650,7 @@
     "Número do WhatsApp, e-mail e Instagram da empresa",
     "CNPJ regularizado",
     "Logo em alta resolução (a atual tem 800x800)",
-    "Fotos reais da Ana Paula e da equipe, e confirmação da licença das fotos atuais",
+    "Fotos reais da equipe, e confirmação da licença das fotos atuais",
     "Depoimentos reais com autorização",
     "Texto da política de privacidade"
   ]
