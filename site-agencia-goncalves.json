@@ -1,7 +1,7 @@
 {
   "projeto": {
     "nome": "Site Agência de Cuidadores Gonçalves",
-    "versao": "3.2",
+    "versao": "3.3",
     "data": "2026-10-25",
     "objetivo": "Apresentar os serviços com clareza, transmitir confiança de família e levar a família a conversar no WhatsApp.",
     "acao_principal": "Conversar no WhatsApp",
@@ -530,11 +530,11 @@
       "titulo_h2": "Palavras de quem confiou em nós.",
       "depoimentos": [
         {
-          "texto": "[Depoimento real de uma família atendida, publicado com autorização.]",
-          "nome": "[Nome]",
-          "cidade": "[cidade]",
-          "relacao": "filha de [paciente]",
-          "observacao": "Placeholder. Nunca inventar depoimento. Quando houver vários, exibir em carrossel simples com setas."
+          "texto": "Meu marido tem Parkinson e hoje fica a maior parte do tempo na cama. Os remédios, a higiene e a rotina dele ficam com a cuidadora da Agência Gonçalves, e ela faz tudo com muita atenção. Com isso, eu consigo estar com ele de um jeito mais leve, conversando e fazendo companhia. E voltei a sair para os meus compromissos com tranquilidade, porque sei que ele está bem cuidado.",
+          "nome": "Maria",
+          "cidade": "Florianópolis",
+          "relacao": "esposa",
+          "observacao": "Publicado a pedido da Mari em 2026-10-25, como depoimento de cliente real com autorização. Nunca inventar depoimento. Quando houver vários, exibir em carrossel simples com setas."
         }
       ],
       "nota": "Cada depoimento é lido pela agência e publicado somente com a aprovação da família.",
@@ -686,7 +686,7 @@
     "CNPJ regularizado",
     "Logo em alta resolução (a atual tem 800x800)",
     "Fotos reais da equipe, e confirmação da licença das fotos atuais",
-    "Depoimentos reais com autorização",
-    "Texto da política de privacidade"
+    "Texto da política de privacidade",
+    "Mais depoimentos reais com autorização"
   ]
 }

@@ -546,6 +546,7 @@ body.menu-aberto { overflow: hidden; }
 .depoimento[hidden] { display: none; }
 .depoimento .aspas { width: 48px; height: 48px; color: var(--dourado); margin-bottom: 16px; }
 .depoimento blockquote { margin: 0; font: italic 400 20px/1.5 var(--f-titulo); color: var(--azul-marinho); }
+.depoimento blockquote p + p { margin-top: 14px; }
 .depoimento figcaption { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--linha); font-size: 15px; line-height: 1.5; color: var(--texto-legenda); }
 .depoimento figcaption strong { display: block; color: var(--texto); font-weight: 700; }
 .dep-setas { display: flex; gap: 10px; margin-top: 18px; }
@@ -584,7 +585,7 @@ body.menu-aberto { overflow: hidden; }
 @media (min-width: 1024px) {
   .depoimentos .container { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 80px; }
   .depoimento { padding: 48px 44px 38px; }
-  .depoimento blockquote { font-size: 24px; }
+  .depoimento blockquote { font-size: 22px; }
   .form-card { padding: 44px 40px; }
   .form-card::before { left: 40px; right: 40px; }
 }
@@ -969,8 +970,11 @@ body.menu-aberto { overflow: hidden; }
           <!-- Para adicionar um depoimento real, copie o bloco <figure> abaixo. Com mais de um, as setas aparecem sozinhas. -->
           <figure class="depoimento">
             <svg class="aspas" aria-hidden="true"><use href="#i-aspas"/></svg>
-            <blockquote>[Depoimento real de uma família atendida, publicado com autorização.]</blockquote>
-            <figcaption><strong>[Nome]</strong>[cidade] · filha de [paciente]</figcaption>
+            <blockquote>
+              <p>“Meu marido tem Parkinson e hoje fica a maior parte do tempo na cama. Os remédios, a higiene e a rotina dele ficam com a cuidadora da Agência Gonçalves, e ela faz tudo com muita atenção.</p>
+              <p>Com isso, eu consigo estar com ele de um jeito mais leve, conversando e fazendo companhia. E voltei a sair para os meus compromissos com tranquilidade, porque sei que ele está bem cuidado.”</p>
+            </blockquote>
+            <figcaption><strong>Maria</strong>esposa · Florianópolis</figcaption>
           </figure>
           <div class="dep-setas" hidden>
             <button type="button" data-dir="-1" aria-label="Depoimento anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
