@@ -1,7 +1,7 @@
 {
   "projeto": {
     "nome": "Site Agência de Cuidadores Gonçalves",
-    "versao": "3.1",
+    "versao": "3.2",
     "data": "2026-10-25",
     "objetivo": "Apresentar os serviços com clareza, transmitir confiança de família e levar a família a conversar no WhatsApp.",
     "acao_principal": "Conversar no WhatsApp",
@@ -498,6 +498,28 @@
           "texto": "Contrato por escrito, notícias da rotina e substituição rápida em caso de imprevisto."
         }
       ]
+    },
+    {
+      "id": "para-familia",
+      "tipo": "texto_e_chamada",
+      "estilo": "Cartão branco com borda dourada fina; título à esquerda e texto à direita no computador",
+      "etiqueta": "Para quem cuida de quem ama",
+      "titulo_h2": "Você volta a ser família, e não só quem cuida.",
+      "titulo_destaque": {
+        "trecho": "e não só quem cuida.",
+        "estilo": "itálico, verde"
+      },
+      "paragrafos": [
+        "Quando alguém da casa fica acamado, por Parkinson ou outra condição, a rotina muda de uma hora para outra. Remédios, higiene, horários e consultas passam a ocupar o dia inteiro de quem ama.",
+        "Com um cuidador selecionado pela Agência Gonçalves, essa parte fica com a gente: medicação conforme a receita, higiene, conforto e atenção à rotina. Você fica com o que ninguém substitui, a companhia, a conversa e o carinho."
+      ],
+      "destaque": "E pode voltar a cuidar da sua vida e dos seus compromissos, sabendo que ele está em boas mãos.",
+      "botao": {
+        "texto": "Conversar no WhatsApp",
+        "acao": "whatsapp",
+        "mensagem": "Olá! Vim pelo site e gostaria de conversar sobre cuidado para um familiar acamado."
+      },
+      "observacao": "Texto na voz da agência, não é depoimento. Quando houver uma cliente real, usar o rascunho de depoimento aprovado por ela na seção Depoimentos."
     },
     {
       "id": "depoimentos",

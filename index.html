@@ -510,6 +510,27 @@ body.menu-aberto { overflow: hidden; }
   .etapas h3 { font-size: 24px; }
 }
 
+/* Para quem cuida */
+.familia { padding-top: 0; }
+.familia-card {
+  position: relative; overflow: hidden; display: grid; gap: 28px; background: #fff; border-radius: var(--raio-cartao);
+  padding: 40px 24px; box-shadow: var(--sombra); border: 1px solid rgba(201, 148, 74, .35);
+}
+.familia-card::before { /* aro dourado ao fundo, como na logo */
+  content: ""; position: absolute; width: 420px; height: 420px; left: -190px; bottom: -230px; border-radius: 50%;
+  border: 1.5px solid rgba(201, 148, 74, .3); box-shadow: 0 0 0 26px rgba(238, 239, 228, .6); pointer-events: none;
+}
+.familia-topo, .familia-texto { position: relative; min-width: 0; }
+.familia-texto p { color: var(--texto-suave); }
+.familia-texto p + p { margin-top: 16px; }
+.familia-texto .familia-destaque { font: italic 400 21px/1.45 var(--f-titulo); color: var(--azul-marinho); padding-left: 18px; border-left: 2px solid var(--dourado); margin-top: 22px; }
+.familia-texto .btn { margin-top: 28px; }
+@media (max-width: 479px) { .familia-texto .btn { width: 100%; } }
+@media (min-width: 1024px) {
+  .familia-card { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 72px; padding: 72px 72px; align-items: start; }
+  .familia-texto .familia-destaque { font-size: 24px; }
+}
+
 /* Depoimentos */
 .depoimentos { background: var(--creme); overflow: hidden; }
 .depoimentos::before {
@@ -917,6 +938,24 @@ body.menu-aberto { overflow: hidden; }
         <li class="reveal" style="--d:.24s"><span class="numero" aria-hidden="true">3</span><h3>O cuidador certo</h3><p>Selecionamos com rigor um profissional entrevistado e avaliado para aquele perfil. Se quiser, comece com uma diária experimental.</p></li>
         <li class="reveal" style="--d:.36s"><span class="numero" aria-hidden="true">4</span><h3>Perto de você</h3><p>Contrato por escrito, notícias da rotina e substituição rápida em caso de imprevisto.</p></li>
       </ol>
+    </div>
+  </section>
+
+  <!-- Para quem cuida -->
+  <section class="secao familia" id="para-familia" aria-labelledby="titulo-familia">
+    <div class="container">
+      <div class="familia-card reveal">
+        <div class="familia-topo">
+          <p class="etiqueta">Para quem cuida de quem ama</p>
+          <h2 id="titulo-familia">Você volta a ser família, <em class="destaque">e não só quem cuida.</em></h2>
+        </div>
+        <div class="familia-texto">
+          <p>Quando alguém da casa fica acamado, por Parkinson ou outra condição, a rotina muda de uma hora para outra. Remédios, higiene, horários e consultas passam a ocupar o dia inteiro de quem ama.</p>
+          <p>Com um cuidador selecionado pela Agência Gonçalves, essa parte fica com a gente: medicação conforme a receita, higiene, conforto e atenção à rotina. Você fica com o que ninguém substitui, a companhia, a conversa e o carinho.</p>
+          <p class="familia-destaque">E pode voltar a cuidar da sua vida e dos seus compromissos, sabendo que ele está em boas mãos.</p>
+          <a class="btn btn-wa" href="#contato" data-wa data-wa-msg="Olá! Vim pelo site e gostaria de conversar sobre cuidado para um familiar acamado."><svg aria-hidden="true"><use href="#i-wa"/></svg>Conversar no WhatsApp</a>
+        </div>
+      </div>
     </div>
   </section>
 
