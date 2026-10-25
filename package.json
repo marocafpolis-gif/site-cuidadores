@@ -1,0 +1,9 @@
+{
+  "name": "movimento-e-longevidade",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "seed:sql": "node scripts/gerar-seed-sql.mjs",
+    "dev": "python3 -m http.server 8080"
+  }
+}
